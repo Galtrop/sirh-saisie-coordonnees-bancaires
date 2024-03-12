@@ -1,0 +1,27 @@
+document.getElementById('verificationForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  // Récupération des valeurs des champs
+  const nom = document.getElementById('nom').value;
+  const prenom = document.getElementById('prenom').value;
+  const email = document.getElementById('email').value;
+  const carte = document.getElementById('carte').value;
+  const cryptogramme = document.getElementById('cryptogramme').value;
+  const expiration = document.getElementById('expiration').value;
+
+  // Simulation de l'appel API fictif
+  // Ici, nous supposons simplement que la vérification est réussie
+  const verificationResult = {
+    success: true,
+    message: "Vérification réussie. La transaction peut être effectuée."
+  };
+
+  // Affichage du résultat de la vérification
+  const verificationResultElement = document.getElementById('verificationResult');
+  if (verificationResult.success) {
+    verificationResultElement.style.color = 'green';
+  } else {
+    verificationResultElement.style.color = 'red';
+  }
+  verificationResultElement.textContent = verificationResult.message;
+});
